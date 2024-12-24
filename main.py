@@ -7,7 +7,7 @@ Grid = list[list[Optional[Card]]]
 
 def card_to_str(card: Optional[Card]) -> str:
     if card is None:
-        return "  "  # Two spaces for empty spots
+        return "   "  # Two spaces for empty spots
     rank, suit = card
     # Convert face cards to letters
     rank_str = {11: 'J', 12: 'Q', 13: 'K'}.get(rank, str(rank))
