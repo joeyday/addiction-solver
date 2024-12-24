@@ -10,7 +10,7 @@ def card_to_str(card: Optional[Card]) -> str:
         return "   "  # Two spaces for empty spots
     rank, suit = card
     # Convert face cards to letters
-    rank_str = {11: 'J', 12: 'Q', 13: 'K'}.get(rank, str(rank))
+    rank_str = str(rank)
     # One space padding if single digit, no padding if double digit
     padding = " " if len(rank_str) == 1 else ""
     return f"{padding}{rank_str}{suit}"
