@@ -5,7 +5,7 @@ from typing import Optional
 Card = tuple[int, str]
 Grid = list[list[Optional[Card]]]
 
-def create_deck() -> list[tuple[int, str]]:
+def create_deck() -> list[Card]:
     ranks = range(1, 14)  # 1-13
     suits = ['s', 'h', 'c', 'd']
     cards = [(rank, suit) for suit in suits for rank in ranks]
