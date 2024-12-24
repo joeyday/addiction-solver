@@ -1,6 +1,12 @@
 import random 
 from typing import Optional
 
+def create_deck() -> list[tuple[int, str]]:
+    ranks = range(1, 14)  # 1-13
+    suits = ['s', 'h', 'c', 'd']
+    cards = [(rank, suit) for suit in suits for rank in ranks]
+    return cards
+
 def shuffle(array: list) -> list:
     result = array.copy()
     for i in range(len(result)-1, 0, -1):
@@ -8,16 +14,10 @@ def shuffle(array: list) -> list:
         result[i], result[j] = result[j], result[i]
     return result
 
-def create_deck() -> list[tuple[int, str]]:
-    ranks = range(1, 14)  # 1-13
-    suits = ['s', 'h', 'c', 'd']
-    cards = [(rank, suit) for suit in suits for rank in ranks]
-    return cards
-
 # Create and store a sorted deck
-cards = create_deck()
+deck = create_deck()
 # Shuffle the deck
-shuffled_deck = shuffle(cards)
+shuffled_deck = shuffle(deck)
 
 # Type alias for a card
 Card = tuple[int, str]
