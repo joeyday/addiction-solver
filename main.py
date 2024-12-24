@@ -1,4 +1,5 @@
 import random 
+from typing import Optional
 
 def shuffle(n: int) -> list[int]:
     numbers = list(range(n))
@@ -17,11 +18,9 @@ def create_deck() -> list[tuple[int, str]]:
 
 # Create and store a sorted deck
 cards = create_deck()
-# If you want it shuffled, use the shuffle function
+# Shuffle the deck
 shuffled_cards = shuffle(len(cards))
 shuffled_deck = [cards[i] for i in shuffled_cards]
-
-from typing import Optional
 
 # Type alias for a card
 Card = tuple[int, str]
