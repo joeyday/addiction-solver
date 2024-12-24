@@ -5,6 +5,14 @@ from typing import Optional
 Card = tuple[int, str]
 Grid = list[list[Optional[Card]]]
 
+def card_to_str(card: Optional[Card]) -> str:
+    if card is None:
+        return "  "  # Two spaces for alignment
+    rank, suit = card
+    # Convert face cards to letters
+    rank_str = {11: 'J', 12: 'Q', 13: 'K'}.get(rank, str(rank))
+    return f"{rank_str}{suit}"
+
 def create_deck() -> list[Card]:
     ranks = range(1, 14)  # 1-13
     suits = ['s', 'h', 'c', 'd']
@@ -38,4 +46,4 @@ for r in range(len(grid)):
             grid[r][c] = card
 
 for row in grid:
-    print(row)
+    print(' '.join(card_to_str(card) for card in row))
