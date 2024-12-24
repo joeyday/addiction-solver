@@ -2,7 +2,7 @@ import random
 from typing import Optional
 
 def shuffle(array: list) -> list:
-    result = array.copy()  # Create a copy to avoid modifying original
+    result = array.copy()
     for i in range(len(result)-1, 0, -1):
         j = random.randint(0, i)
         result[i], result[j] = result[j], result[i]
