@@ -7,11 +7,13 @@ Grid = list[list[Optional[Card]]]
 
 def card_to_str(card: Optional[Card]) -> str:
     if card is None:
-        return "  "  # Two spaces for alignment
+        return "  "  # Two spaces for empty spots
     rank, suit = card
     # Convert face cards to letters
     rank_str = {11: 'J', 12: 'Q', 13: 'K'}.get(rank, str(rank))
-    return f"{rank_str}{suit}"
+    # One space padding if single digit, no padding if double digit
+    padding = " " if len(rank_str) == 1 else ""
+    return f"{padding}{rank_str}{suit}"
 
 def create_deck() -> list[Card]:
     ranks = range(1, 14)  # 1-13
