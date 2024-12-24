@@ -21,3 +21,18 @@ cards = create_deck()
 shuffled_cards = shuffle(len(cards))
 shuffled_deck = [cards[i] for i in shuffled_cards]
 
+from typing import Optional
+
+# Type alias for a card
+Card = tuple[int, str]
+# Type alias for the grid
+Grid = list[list[Optional[Card]]]
+
+def create_grid(rows: int, cols: int) -> Grid:
+    return [[None for _ in range(cols)] for _ in range(rows)]
+
+# Example: Create a 4x4 grid
+grid = create_grid(4, 4)
+# Place a card at position (0,0)
+grid[0][0] = (1, 's')  # Ace of spades
+
