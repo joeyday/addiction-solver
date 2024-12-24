@@ -1,6 +1,10 @@
 import random 
 from typing import Optional
 
+# Type aliases
+Card = tuple[int, str]
+Grid = list[list[Optional[Card]]]
+
 def create_deck() -> list[tuple[int, str]]:
     ranks = range(1, 14)  # 1-13
     suits = ['s', 'h', 'c', 'd']
@@ -19,10 +23,6 @@ deck = create_deck()
 # Shuffle the deck
 shuffled_deck = shuffle(deck)
 
-# Type alias for a card
-Card = tuple[int, str]
-# Type alias for the grid
-Grid = list[list[Optional[Card]]]
 
 def create_grid(rows: int, cols: int) -> Grid:
     return [[None for _ in range(cols)] for _ in range(rows)]
