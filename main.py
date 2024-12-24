@@ -11,9 +11,7 @@ def card_to_str(card: Optional[Card]) -> str:
     rank, suit = card
     # Convert face cards to letters
     rank_str = str(rank)
-    # One space padding if single digit, no padding if double digit
-    padding = " " if len(rank_str) == 1 else ""
-    return f"{padding}{rank_str}{suit}"
+    return f"{rank_str.rjust(2)}{suit}"
 
 def create_deck() -> list[Card]:
     ranks = range(1, 14)  # 1-13
