@@ -9,8 +9,6 @@ def shuffle(n: int) -> list[int]:
         numbers.pop(k)
     return shuffled
 
-
-
 def create_deck() -> list[tuple[int, str]]:
     ranks = range(1, 14)  # 1-13
     suits = ['s', 'h', 'c', 'd']
